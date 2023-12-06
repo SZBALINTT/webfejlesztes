@@ -1,1 +1,11 @@
 # webfejlesztes
+Oldal készítője: Szabon Bálint
+Oldal URL címe: [KITÖLTENI!!!]
+Téma: Dmitry Glukhovsky metró 2035 című könyve,
+továbbá a könyvsorozat (metró 2033 és 2034) által ihletett videójátéksorozat 3. része (Metro Exodus)
+JS kód helye: more.html, ha sikerül index.html
+Fonttípusok: https://fonts.google.com/specimen/Barlow?query=barlow
+Források: 
+https://www.metrothegame.com/media/
+metrothegame facebook oldal,
+wikipédia
