@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About the book called Metro 2035">
+
+    <meta name="author" content="Szabon Bálint">
+    <title>Metro Project Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="imgSource/favicon.ico">    
+    <script src="jQuery/jquery-3.7.1.js"></script>
+    <script src="jQuery/jquery-validation-1.19.5/dist/jquery.validate.js"></script>
+    <script src="jQuery/galleria-1.6.1/dist/galleria.js"></script>
+    <script src="jQuery/galleria-1.6.1/dist/themes/classic/galleria.classic.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#images').galleria(
+                width = 500,
+                height = 500
+            );
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#newsletter").validate({
+                rules: {
+                    firstname: "required",
+                    lastname: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    birthday: {
+                        required: true,
+
+                    },
+                    agreement: {
+                        required: true,
+                    },
+                },
+                messages: {
+                    firstname: "Please input your First name!",
+                    lastname: "Please input your Last name!",
+                    email: "Please give a real e-mail for real news, and metro content!",
+                    birthday: "Please input your birthday!",
+                    agreement: "Please agree to receive an unhinged amount of metro content!",
+                },
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#quiz").validate({
+                rules: {
+                    radio: "required",
+                    select: "required",
+                    range: "required",
+                    bonus: "required",
+                    contactinfo: {
+                        required: true,
+                        email: true,
+                    },
+                    firstname2: {
+                        required: {
+                            depends: function (element) {
+                                return $("#contact").is(":checked");
+                            }
+                        }
+                    },
+                    lastname2: {
+                        required: {
+                            depends: function (element) {
+                                return $("#contact").is(":checked");
+                            }
+                        }
+                    },
+                    birthday2: {
+                        required: {
+                            depends: function (element) {
+                                return $("#contact").is(":checked");
+                            }
+                        }
+                    },
+                    agreement2: {
+                        required: {
+                            depends: function (element) {
+                                return $("#contact").is(":checked");
+                            }
+                        }
+                    },
+                },
+                messages: {
+                    radio: "Please try to answer all the questions!",
+                    select: "At least try to guess!",
+                    bonus: "You can't win if you don't even try!",
+                    contactinfo: "We need your email to find your other info in our database!",
+                    firstname2: "You have not yet registered for the newsletter, please input you name.",
+                    lastname2: "You have not yet registered for the newsletter, please input you name.",
+                    birthday2: "You have not yet registered for the newsletter, please input you birthday.",
+                    agreement2: "Please accept the terms",
+                },
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <header class="flex-container">
+        <h1>Metro Project Page</h1>
+    </header>
+    <nav class="flex-container">
+        <ul class="flex-container">
+            <li><a href="index.html">Main</a></li>
+            <li><a href="jatek.html">The video game</a></li>
+            <li><a href="konyv.html">The book</a></li>
+            <li><a href="#" id="current">More</a></li>
+            
+        </ul>
+    </nav>
+
+
+
+    <article class="article">
+        <h2>A gallery with some images from the game</h2>
+        <section id="images" class="galleria">
+
+            <img src="imgSource/MetroVolgaPanoramic.jpg" alt="Volga from afar" title="Volga Panoramic">
+            <img src="imgSource/MetroAurora.jpg" alt="The Aurora travelling" title="The Aurora">
+            <img src="imgSource/MetroCaspianFlamethrowers.jpg" alt="Caspian level with cars that have flamethrowers"
+                title="Caspian level and some flames">
+            <img src="imgSource/MetroMoscovAPC.jpg" alt="Ruins of Moscow with an APC"
+                title="Ruins of Moscow with an APC">
+            <img src="imgSource/MetroMoscovGasMask.jpg" alt="Ruins of Moscow with a broken gas mask"
+                title="Ruins of Moscow with a broken gas mask">
+            <img src="imgSource/MetroOSKOMFlameThrower.jpg" alt="A flamethrower used in one of the levels"
+                title="OSKOM standard issue flamethrower">
+            <img src="imgSource/MetroWorkshop.jpg" alt="The workshop onboard the Aurora"
+                title="The workshop onboard the Aurora">
+            <img src="imgSource/MetroVolgaBridge.jpg" alt="The bridge on the Volga" title="The bridge on the Volga">
+            <img src="imgSource/MetroVolga8kTrainyard.jpg" alt="The trainyard in the Volga level"
+                title="The trainyard in the Volga level">
+            <img src="imgSource/MetroSamsStory.jpg" alt="Sam's Story, the DLC after The Two Colonels"
+                title="Sam's Story">
+            <img src="imgSource/MetroTempleBase.jpg" alt="The Temple in the Forest level"
+                title="The Temple in the Forest level">
+            <img src="imgSource/MetroSpartansOnAurora.png" alt="Spartans aboard the Aurora"
+                title="Spartans aboard the Aurora">
+            <img src="imgSource/MetroLastArea.png" alt="The Forest Level" title="The Forest level">
+            <img src="imgSource/MetroCaspianCharacter.jpg" alt="Giul, one of the characters"
+                title="Giul, one of the characters">
+
+
+
+
+        </section>
+        <form action="#" method="post" id="newsletter" novalidate>
+            <h2>Subscribe to Metro Propaganda (Newsletter and fun content)!</h2>
+            <p><label for="firstname">First name</label></p>
+            <p><input type="text" name="firstname" id="firstname"></p>
+            <p><label for="lastname">Lastname</label></p>
+            <p><input type="text" name="lastname" id="lastname"></p>
+            <p><label for="email">Email</label></p>
+            <p><input type="email" name="email" id="email"></p>
+            <p><label for="birthday">Birthday:</label></p>
+            <p><input type="date" id="birthday" name="birthday"></p>
+            <p><label for="agreement">I agree to the terms.</label><input type="checkbox" name="agreement"
+                    id="agreement"></p>
+            <p><input type="submit" value="Send me news and fun content!"></p>
+
+
+        </form>
+        <form action="#" method="post" id="quiz" novalidate>
+            <h2>You can also try this little quiz while you're at it for a chance* to win an unlimited metro pass in
+                Moscow!</h2>
+            <p>1. What's the name of the train that they used in the game?</p>
+            <p><label for="aurore">Aurore</label><input type="radio" name="radio" id="aurore" value="aurore"></p>
+            <p><label for="aurora">Aurora</label><input type="radio" name="radio" id="aurora" value="aurora"></p>
+            <p><label for="auger">Auger</label><input type="radio" name="radio" id="auger" value="auger"></p>
+            <p>2. Which station did Artyom live in?</p>
+            <p><label for="select">Options:</label></p>
+            <p><select name="select" id="select">
+                    <option value="">Select one</option>
+                    <option value="1">VDNHK</option>
+                    <option value="2">Exhibiton (VDNKh)</option>
+                    <option value="3">Polis</option>
+                    <option value="4">Hansa</option>
+                </select></p>
+            <p><label for="range">3. Which year was Artyom absent from the story?</label></p>
+            <p>2033-2034-2035</p>
+            <p><input type="range" min="2033" max="2035" name="range" id="range"></p>
+            <p><label for="bonus">Bonus question!</label></p>
+            <p>The Author's favourite book?</p>
+            <p>Input full lower, without spaces (e.g.: theexpanse)</p>
+            <p><input type="text" name="bonus" id="bonus"></p>
+            <p>Before you submit...</p>
+            <p>You need to subscribe for us to be able to contact you in case you win.</p>
+            <p><label for="contact">I have not yet subscribed to the newsletter.</label><input type="checkbox"
+                    name="contact" id="contact" onclick="canContact()"></p>
+            <p><label for="contactinfo"></label>If you have subscribed we only need an email</p>
+            <p><input type="email" name="contactinfo" id="contactinfo"></p>
+            <section id="else">
+
+                <p><label for="firstname2">First name</label></p>
+                <p><input type="text" name="firstname2" id="firstname2"></p>
+                <p><label for="lastname2">Lastname</label></p>
+                <p><input type="text" name="lastname2" id="lastname2"></p>
+                <p><label for="birthday">Birthday:</label></p>
+                <p><input type="date" id="birthday2" name="birthday2"></p>
+                <p><label for="agreement2">I agree to the terms.</label><input type="checkbox" name="agreement2"
+                        id="agreement2"></p>
+
+
+            </section>
+            <p><input type="submit" value="Submit answers!" id="submit"></p>
+        </form>
+        
+    </article>
+
+
+
+
+
+    <footer>
+        <h3 class="footerh">This website is created for an assignment at a university.</h3>
+        <h4>*We can not guarantee a conventional drawing.</h4>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
